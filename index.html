@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Splitter</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="header.js" defer></script>
+  </head>
+  <body>
+    <!-- NAV / HEADER -->
+    <header>
+      <nav
+        class="challenge-navbar"
+        data-backurl="/frontend-mini-challenges/#/javascript/"
+        data-homeurl="/frontend-mini-challenges/"
+      >
+        <div class="left">
+          <a
+            class="back"
+            href="/frontend-mini-challenges/#/javascript/"
+            aria-label="Back"
+            >&lt;</a
+          >
+          <a class="logo" href="/frontend-mini-challenges/" title="Home">
+            <img src="icons/logo.jpg" alt="logo" />
+          </a>
+        </div>
+
+        <h1 class="title">Counter</h1>
+
+        <div class="right">
+          <div class="responsive_nav">
+            <div class="hamburger">
+              <!-- three lines -->
+              <div class="hamburger-icon">
+                <div class="line l1"></div>
+                <div class="line l2"></div>
+                <div class="line l3"></div>
+              </div>
+
+              <!-- cross (same visual position as hamburger) -->
+              <div class="close-btn cross">✕</div>
+
+              <!-- slide-in menu -->
+              <section
+                class="menu"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile menu"
+              >
+                <!-- help button -->
+                <!-- Open button -->
+                <button id="openModalBtn" class="open-modal-btn">?</button>
+
+                <!-- Modal -->
+                <div id="modalOverlay" class="modal-overlay hidden">
+                  <div class="modal">
+                    <button id="closeModalBtn" class="modal-close">✕</button>
+                    <header class="modal-header">
+                      <h2>Counter</h2>
+                    </header>
+                    <div class="modal-body">
+                      <p>
+                        Can you implement a simple counter with increment and
+                        decrement functionality?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- menu links (single anchors, icon + label) -->
+                <a
+                  class="menu-item source-code"
+                  href="https://github.com/adarshbam/counter-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Source Code"
+                >
+                  <img src="icons/code-icon.svg" alt="source code" />
+                  <span class="mobile">Source code</span>
+                </a>
+
+                <a
+                  class="menu-item youtube"
+                  href="https://youtu.be/9OIeUtXX3SA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Youtube"
+                >
+                  <img src="icons/youtube-icon.svg" alt="youtube" />
+                  <span class="mobile">Youtube</span>
+                </a>
+
+                <a
+                  class="menu-item github"
+                  href="https://github.com/adarshbam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Github Repo"
+                >
+                  <img src="icons/github-icon.svg" alt="github" />
+                  <span class="mobile">Github Repo</span>
+                </a>
+              </section>
+            </div>
+            <!-- .hamburger -->
+          </div>
+          <!-- .responsive_nav -->
+        </div>
+        <!-- .right -->
+      </nav>
+    </header>
+
+    <!-- MAIN (UI placeholder) -->
+    <main>
+      <!-- Your project code here -->
+    </main>
+  </body>
+</html>
