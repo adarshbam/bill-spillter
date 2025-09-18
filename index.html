@@ -117,6 +117,57 @@
     <!-- MAIN (UI placeholder) -->
     <main>
       <!-- Your project code here -->
+      <form id="bill-calculator">
+        <div class="bill-input">
+          <p>Bill</p>
+          <div class="bill-amount">
+            <span>₹ </span>
+            <input type="number" name="bill" id="bill" required />
+          </div>
+          <p>Select Tip</p>
+          <div class="tip-input">
+            <div class="tip-percentage">
+              <button type="button" class="tip-amount" disabled>5%</button>
+              <button type="button" class="tip-amount" disabled>10%</button>
+              <button type="button" class="tip-amount" disabled>15%</button>
+              <button type="button" class="tip-amount" disabled>25%</button>
+              <button type="button" class="tip-amount" disabled>50%</button>
+              <button type="button" class="tip-amount" disabled>75%</button>
+            </div>
+            <input
+              type="number"
+              class="tip-amount"
+              name="custom-tip"
+              id="custom-tip"
+            />
+          </div>
+          <p>Number of People</p>
+          <input
+            type="number"
+            name="num-of-people"
+            id="num-of-people"
+            required
+          />
+          <button class="generate-bill" type="submit" disabled>
+            Generate Bill
+          </button>
+        </div>
+        <div class="bill-output">
+          <div class="bill-ouput-section">
+            <p>Tip amount</p>
+            <p id="tip-amount-output"></p>
+          </div>
+          <div class="bill-ouput-section">
+            <p>Total</p>
+            <p id="total-bill"></p>
+          </div>
+          <div class="bill-ouput-section">
+            <p>Each Person Bill</p>
+            <p id="each-person-bill"></p>
+          </div>
+          <button class="reset" type="reset">Reset</button>
+        </div>
+      </form>
     </main>
   </body>
 </html>

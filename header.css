@@ -5,6 +5,7 @@
   --bg: #ffffff;
   --text: #0f1724;
   --muted: #6b7280;
+  --header-height: 80px;
 }
 * {
   box-sizing: border-box;
@@ -20,7 +21,7 @@ body {
 
 /* NAV header */
 .challenge-navbar {
-  height: 80px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -319,4 +320,11 @@ body {
     background: rgba(0, 0, 0, 0.06);
     z-index: -1;
   }
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--header-height));
 }
