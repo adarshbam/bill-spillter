@@ -126,19 +126,20 @@
           </div>
           <p>Select Tip</p>
           <div class="tip-input">
-            <div class="tip-percentage">
-              <button type="button" class="tip-amount" disabled>5%</button>
-              <button type="button" class="tip-amount" disabled>10%</button>
-              <button type="button" class="tip-amount" disabled>15%</button>
-              <button type="button" class="tip-amount" disabled>25%</button>
-              <button type="button" class="tip-amount" disabled>50%</button>
-              <button type="button" class="tip-amount" disabled>75%</button>
+            <div class="tip-percentage disabled">
+              <button type="button" class="tip-amount">5%</button>
+              <button type="button" class="tip-amount">10%</button>
+              <button type="button" class="tip-amount">15%</button>
+              <button type="button" class="tip-amount">25%</button>
+              <button type="button" class="tip-amount">50%</button>
+              <button type="button" class="tip-amount">75%</button>
             </div>
             <input
               type="number"
               class="tip-amount"
               name="custom-tip"
               id="custom-tip"
+              disabled
             />
           </div>
           <p>Number of People</p>
@@ -147,6 +148,7 @@
             name="num-of-people"
             id="num-of-people"
             required
+            disabled
           />
           <button class="generate-bill" type="submit" disabled>
             Generate Bill
@@ -165,7 +167,7 @@
             <p>Each Person Bill</p>
             <p id="each-person-bill"></p>
           </div>
-          <button class="reset" type="reset">Reset</button>
+          <button class="reset" type="button" disabled>Reset</button>
         </div>
       </form>
     </main>

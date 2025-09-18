@@ -6,3 +6,13 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+.tip-percentage.disabled .tip-amount {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

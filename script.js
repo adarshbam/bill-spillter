@@ -2,11 +2,13 @@ const tipPercentageContainer = document.querySelector(".tip-percentage");
 const tipAmountInput = document.querySelector("#bill");
 const customTip = document.querySelector("#custom-tip");
 const numOfPeople = document.querySelector("#num-of-people");
-const generateBill = document.querySelector(".generate-bill");
 
 const tipAmount = document.querySelector("#tip-amount-output");
 const totalBill = document.querySelector("#total-bill");
 const eachPersonBill = document.querySelector("#each-person-bill");
+
+const generateBill = document.querySelector(".generate-bill");
+const resetBill = document.querySelector(".reset");
 
 const billCalculator = document.querySelector("#bill-calculator");
 
@@ -19,24 +21,23 @@ function loopTip(fn) {
 
 function disableGenerate() {
   if (tipAmountInput.value && tipPercentage && numOfPeople.value) {
-    generateBill.removeAttribute("disabled");
+    generateBill.disabled = false;
     console.log(tipAmountInput.value, tipPercentage, numOfPeople.value);
   } else {
-    generateBill.setAttribute("disabled", "true");
+    generateBill.disabled = true;
     console.log(tipAmountInput.value, tipPercentage, numOfPeople.value);
   }
 }
 
 tipAmountInput.addEventListener("input", (e) => {
+  console.log(e.target.value);
   if (e.target.value) {
-    loopTip((tip) => {
-      tip.removeAttribute("disabled");
-    });
-  } else
-    loopTip((tip) => {
-      tip.setAttribute("disabled", "true");
-    });
-  disableGenerate();
+    tipPercentageContainer.classList.remove("disabled");
+    customTip.disabled = false;
+    numOfPeople.disabled = false;
+  } else {
+    tipPercentageContainer.classList.add("disabled");
+  }
 });
 
 tipPercentageContainer.addEventListener("click", (e) => {
@@ -65,9 +66,12 @@ function output(outputText, value) {
 
 billCalculator.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const billCalculatorData = new FormData(billCalculator);
   let billAmount = 0;
   let numOfPeople = 0;
+
+  resetBill.disabled = false;
 
   for (let values of billCalculatorData.entries()) {
     if (values[0] == "bill") billAmount = Number(values[1]);
@@ -82,4 +86,18 @@ billCalculator.addEventListener("submit", (e) => {
 
   output(totalBill, billAmount);
   output(eachPersonBill, billAmount / numOfPeople);
+});
+
+resetBill.addEventListener("click", (e) => {
+  tipPercentageContainer.classList.add("disabled");
+  tipAmountInput.value = "";
+  numOfPeople.value = "";
+
+  output(tipAmount, "");
+  output(totalBill, "");
+  output(eachPersonBill, "");
+  resetBill.disabled = true;
+  numOfPeople.disabled = true;
+  customTip.disabled = true;
+  generateBill.disabled = true;
 });
