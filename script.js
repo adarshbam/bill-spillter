@@ -37,6 +37,8 @@ tipAmountInput.addEventListener("input", (e) => {
     numOfPeople.disabled = false;
   } else {
     tipPercentageContainer.classList.add("disabled");
+    customTip.disabled = true;
+    numOfPeople.disabled = true;
   }
 });
 
@@ -78,14 +80,14 @@ billCalculator.addEventListener("submit", (e) => {
     else if (values[0] == "num-of-people") numOfPeople = Number(values[1]);
   }
 
-  const totalTip = billAmount * (tipPercentage / 100);
+  const totalTip = Math.round(billAmount * (tipPercentage / 100));
   billAmount += totalTip;
 
   console.log(billAmount, totalTip, numOfPeople);
   output(tipAmount, totalTip);
 
-  output(totalBill, billAmount);
-  output(eachPersonBill, billAmount / numOfPeople);
+  output(totalBill, Math.round(billAmount));
+  output(eachPersonBill, Math.round(billAmount / numOfPeople));
 });
 
 resetBill.addEventListener("click", (e) => {
